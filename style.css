@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
+
 body{
     background: #1c1c1c;
 }
@@ -6,6 +8,23 @@ body{
     position: relative;
     width: 100%; /* adjust based on your layout */
     height: 50px; /* adjust based on your layout */
+}
+
+
+
+.NaviagtionBarGlow {
+    background-color: #00bcd4;
+    opacity: 0.1; 
+    position: absolute;
+    left: 50%;
+    top: 5px;
+    width: calc(65% + 10px); 
+    height: 40px;
+    transform: translateX(-50%);
+    border-radius: 50px;
+    filter: blur(5px);
+    z-index: 0;
+    transition: 1s ease;
 }
 
 .NaviagtionBar {
@@ -21,24 +40,54 @@ body{
     border-radius: 50px;
     transform: translateX(-50%);
     z-index: 1;
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    
 }
 
-.NaviagtionBarGlow {
-    background-color: #00bcd4;
-    opacity: 0; /* start at 0 opacity */
-    position: absolute;
-    left: 50%;
-    top: 5px;
-    width: calc(65% + 10px); /* matches the width of the navbar */
-    height: 40px;
-    transform: translateX(-50%);
-    border-radius: 50px;
-    filter: blur(2px);
-    z-index: 0;
-    transition: 1s ease; /* animate opacity */
+.nav-item {
+    position: relative; /* Position relative to use absolute positioning for the pseudo-element */
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Space inside items */
+    margin: 0 10px; /* Add horizontal spacing between items */
+    border-radius: 30px; /* Rounded corners for items */
+    transition: color 0.3s; /* Smooth transition for text color */
+    font-family: 'Kanit', sans-serif;
+}
+
+.nav-item::after {
+    content: ""; /* Required for the pseudo-element */
+    position: absolute; /* Positioning relative to the nav item */
+    left: 50%; /* Start from the center */
+    bottom: 5px; /* Align to the bottom */
+    width: 0; /* Initial width (0 to start hidden) */
+    height: 2px; /* Height of the underline */
+    background-color: #00bcd4; /* Color of the underline */
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for width and position */
+}
+
+.nav-item:hover::after {
+    width: 100%; /* Full width on hover */
+    left: 0; /* Align to the left */
+}
+
+.nav-item:hover {
+    color: #00bcd4; /* Change text color on hover */
+}
+
+.nav-item-spacing{
+    position: relative; /* Position relative to use absolute positioning for the pseudo-element */
+    background-color: #fff;
+    margin: 0 10px; /* Add horizontal spacing between items */
+    border-radius: 30px; /* Rounded corners for items */
+    height: 15px;
+    width: 5px;
 }
 
 .NaviagtionBarContainer:hover .NaviagtionBarGlow {
-    opacity: 1; /* show the glow when parent is hovered */
+    opacity: 1; 
     filter: blur(15px);
 }
+
