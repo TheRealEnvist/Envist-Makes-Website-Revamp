@@ -36,7 +36,7 @@ body{
     top: 10px;
     width: 65%;
     height: 30px;
-    position: absolute;
+    position: relative;
     border-radius: 50px;
     transform: translateX(-50%);
     z-index: 1;
@@ -46,13 +46,20 @@ body{
     
 }
 
+.nav-tag {
+    position: relative; /* Position relative to use absolute positioning for the pseudo-element */
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    margin: 0 2%; /* Add horizontal spacing between items */
+    transition: color 0.3s; /* Smooth transition for text color */
+    font-family: 'Kanit', sans-serif;
+}
+
 .nav-item {
     position: relative; /* Position relative to use absolute positioning for the pseudo-element */
     color: #fff; /* Text color */
     text-decoration: none; /* Remove underline */
-    padding: 10px 15px; /* Space inside items */
-    margin: 0 10px; /* Add horizontal spacing between items */
-    border-radius: 30px; /* Rounded corners for items */
+    margin: 0 2%; /* Add horizontal spacing between items */
     transition: color 0.3s; /* Smooth transition for text color */
     font-family: 'Kanit', sans-serif;
 }
@@ -61,7 +68,7 @@ body{
     content: ""; /* Required for the pseudo-element */
     position: absolute; /* Positioning relative to the nav item */
     left: 50%; /* Start from the center */
-    bottom: 5px; /* Align to the bottom */
+    bottom: -5px; /* Align to the bottom */
     width: 0; /* Initial width (0 to start hidden) */
     height: 2px; /* Height of the underline */
     background-color: #00bcd4; /* Color of the underline */
@@ -80,9 +87,17 @@ body{
 .nav-item-spacing{
     position: relative; /* Position relative to use absolute positioning for the pseudo-element */
     background-color: #fff;
-    margin: 0 10px; /* Add horizontal spacing between items */
-    border-radius: 30px; /* Rounded corners for items */
+    margin: 0 2%; /* Add horizontal spacing between items */
+    border-radius: 5px; /* Rounded corners for items */
     height: 15px;
+    width: .5%;
+}
+.nav-item-spacing-tag{
+    position: relative; /* Position relative to use absolute positioning for the pseudo-element */
+    background-color: #fff;
+    margin: 0 .1%; /* Add horizontal spacing between items */
+    border-radius: 5px; /* Rounded corners for items */
+    height: 5px;
     width: 5px;
 }
 
