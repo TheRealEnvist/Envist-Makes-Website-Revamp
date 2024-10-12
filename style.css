@@ -2,12 +2,38 @@
 
 body{
     background: #1c1c1c;
+    overflow: hidden; /* Hide scrollbars */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
+
+/* This site */
+
+.BodyContainer{
+    background-color: #171717;
+    outline-width: 2.5px;
+    outline-color: #4b4b4b;
+    outline-style: solid;
+    left: 50%;
+    top: 52%;
+    width: 65%;
+    height: 80%;
+    position: absolute;
+    border-radius: 10px;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+/* Global */
 
 .NaviagtionBarContainer {
     position: relative;
     width: 100%; /* adjust based on your layout */
     height: 50px; /* adjust based on your layout */
+    transition: 1s ease;
 }
 
 
@@ -36,6 +62,7 @@ body{
     top: 10px;
     width: 65%;
     height: 30px;
+    
     position: relative;
     border-radius: 50px;
     transform: translateX(-50%);
@@ -72,13 +99,16 @@ body{
     width: 0; /* Initial width (0 to start hidden) */
     height: 2px; /* Height of the underline */
     background-color: #00bcd4; /* Color of the underline */
+    filter: blur(1px);
     transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for width and position */
 }
+
 
 .nav-item:hover::after {
     width: 100%; /* Full width on hover */
     left: 0; /* Align to the left */
 }
+
 
 .nav-item:hover {
     color: #00bcd4; /* Change text color on hover */
@@ -105,4 +135,9 @@ body{
     opacity: 1; 
     filter: blur(15px);
 }
+
+.NaviagtionBarContainer:hover{
+    transform: scale(1.05,1.05);
+}
+
 
